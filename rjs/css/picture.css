@@ -1,0 +1,256 @@
+/************************************\
+        PICTURE VIEWER COMPONENT
+\************************************/
+
+.rjs-picture{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    background: #fbf9f9;
+    /**transition: all 500ms;**/
+}
+.rjs-picture-action-close{
+    position: absolute;
+    top: 8px;
+    right: 20px;
+    color: #777;
+    transition: all 400ms;
+    cursor: pointer;
+    z-index: 9;
+}
+.rjs-picture-action-close:hover{
+    color: #f64747;
+}
+.rjs-picture-action-fullscreen--enter,
+.rjs-picture-action-fullscreen--exit{
+    height: 18px;
+    width: 18px;
+    top: -4px;
+    background-repeat: no-repeat;
+    background-size: cover !important;
+    position: relative;
+    cursor: pointer;
+    z-index: 99;
+}
+
+.rjs-picture-action-fullscreen--enter{
+    background: url("icons/pictures/expand-arrows.png");
+}
+.rjs-picture-action-fullscreen--exit{
+    background: url("icons/pictures/full-screen.png");
+}
+
+
+.rjs-picture-command{
+    position: relative;
+    width: 200px;
+    bottom: 18px;
+    z-index: 999;
+    height: 40px;
+    border-radius:  5px;
+    background: rgba(255, 255, 255, 0.77);
+    margin: 0 auto;
+    opacity: 0;
+    transition: opacity 1000ms;
+}
+.rjs-picture-command div{
+    display: inline-block;
+    margin: 10px;
+    color: #777;
+}
+
+.rjs-picture-command-zoom-in,
+.rjs-picture-command-zoom-out,
+.rjs-picture-command-rotate{
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    width: 21px;
+    height: 20px;
+    cursor: pointer;
+    transition: all 500ms;
+}
+.rjs-picture-command-zoom-in:hover,
+.rjs-picture-command-zoom-out:hover,
+.rjs-picture-command-rotate:hover{
+    opacity: 1;
+}
+
+.rjs-picture-command-zoom-in{
+    background: url("icons/pictures/zoom-in.png");
+}
+.rjs-picture-command-zoom-out{
+    background: url("icons/pictures/zoom-out.png");
+}
+
+.rjs-picture-command-rotate{
+    font-size:24px;
+    position:relative;
+    top:-14px;
+}
+.rjs-picture-nav-next,
+.rjs-picture-nav-prev{
+    position: absolute;
+    top: 40%;
+}
+
+.rjs-picture-nav-next{
+    right: 0;
+    background: url("icons/pictures/next.png");
+}
+.rjs-picture-nav-prev{
+    left: 0;
+}
+.rjs-picture-nav-next-action,
+.rjs-picture-nav-prev-action{
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    width: 64px;
+    height: 64px;
+    cursor: pointer;
+    opacity: 1;
+    transition: all 500ms;
+}
+.rjs-picture-nav-next-action:hover,
+.rjs-picture-nav-prev-action:hover{
+    opacity: 1;
+}
+.rjs-picture-nav-next-action{
+    background: url("icons/pictures/next.png");
+}
+.rjs-picture-nav-prev-action{
+    background: url("icons/pictures/back.png");
+}
+
+.rjs-picture-viewer{
+    width: 100%;
+    height: 80%;
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0 auto;
+    background: #fbf9f9;
+    text-align: center;
+}
+.rjs-picture-viewer-full{
+    width: 100%;
+    max-width: 83%;
+    height: 100%;
+    position: relative;
+    background: #fbf9f9;
+    top: 0%;
+    bottom: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* direction d'affichage verticale */
+    justify-content: center;
+}
+.rjs-picture-viewer-full--viewer{
+    transition: all 1000ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    width: 57%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.rjs-picture-description{
+    width: 99%;
+    height: auto;
+    background: transparent;
+    color: #999;
+    position: absolute;
+    top: 10px;
+}
+
+.rjs-picture-description h2{
+    -webkit-transition: all 500ms;
+    -moz-transition: all 500ms;
+    -ms-transition: all 500ms;
+    -o-transition: all 500ms;
+    transition: all 500ms;
+    font-weight: 100;
+    margin: 0;
+    font-size: 15px;
+    opacity: 0.3;
+}
+
+.rjs-picture-description h2:hover{
+    opacity: 1;
+}
+
+
+.rjs-picture-bottom{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.1);
+
+}
+.rjs-picture-thumbnails{
+    background: transparent;
+    width: 100%;
+}
+.rjs-picture-thumb{
+    width: 80px;
+    height: 43px;
+    display: inline-block;
+    margin: 10px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all 500ms;
+}
+.rjs-picture-thumb:hover{
+    opacity: 1;
+}
+.rjs-picture-thumb-icon{
+    width: 100%;
+    height: 100%;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+.rjs-picture-error{
+    display: none;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    background: #111111;
+    color: #fff;
+    z-index: 999;
+    text-align: center;
+}
+.rjs-picture-error-close{
+    color: #fff;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 9;
+}
+.rjs-picture-error-title{
+    text-align: center;
+    position: relative;
+    margin-top: 20%;
+}
+@media (min-width: 100px) and (max-width: 736px) {
+
+    .rjs-picture-viewer-full{
+        height: 100%;
+    }
+    .rjs-picture-viewer-full--viewer{
+        width:100%;
+    }
+}
+@media (min-width: 100px) and (max-width: 736px) and (orientation: landscape) {
+    .rjs-picture-viewer-full{
+        height: 100%;
+    }
+}
