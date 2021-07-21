@@ -1,6 +1,6 @@
 /*!
  * R.js v1.0
- * (c) 2016-2017 David BONDUKU
+ * (c) 2016-2021 David BONDUKU
  * Released under the MIT License.
  */
 (function ( global, factory ) {
@@ -15,7 +15,7 @@
      * @type {{version: string}|*}
      */
     var R = R || {
-            version: '1.0.beta',
+            version: '1.0',
             author:'David BONDUKU PIEME'
         };
     /**
